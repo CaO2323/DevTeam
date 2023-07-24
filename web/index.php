@@ -1,5 +1,9 @@
 <?php
 
+//require_once __DIR__ . '/TaskController.php';
+//echo __DIR__ . '/TaskController.php';
+
+
 error_reporting(E_ALL|E_STRICT);
 ini_set('display_errors', 1);
 date_default_timezone_set('CET');
@@ -11,6 +15,7 @@ define('ROOT_PATH', realpath(dirname(__FILE__) . '/../'));
 // defines the cms path
 define('CMS_PATH', ROOT_PATH . '/lib/base/');
 
+$_SESSION['db_type'] = 'json';
 // starts the session
 session_start();
 
@@ -46,3 +51,4 @@ spl_autoload_register('autoloader');
 
 $router = new Router();
 $router->execute($routes);
+?>
